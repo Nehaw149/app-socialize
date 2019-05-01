@@ -11,4 +11,4 @@ export function dataReducer(state: Residents, action: Action): Residents {
         default:
             return state;
     }
-};
+}

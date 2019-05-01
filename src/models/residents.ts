@@ -12,6 +12,9 @@ export enum months {
     Nov = 'November',
     Dec = 'December',
 }
+export interface AllResidents {
+    reside: Residents[];
+}
 
 export interface ContributionPerMonth {
     month: months;
@@ -27,8 +30,4 @@ export interface Residents {
     ownersName: string;
     tenantsName?: string;
     payment: ContributionPerYear[];
-}
-
-interface AllResidents {
-    reside: Residents[];
 }

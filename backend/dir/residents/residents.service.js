@@ -1,12 +1,15 @@
 "use strict";
-//@todo: Return application json as an response
+// @todo: Return application json as an response
 Object.defineProperty(exports, "__esModule", { value: true });
 // services/residents.ts
 var express = require("express");
 var residents = require("./residents.mock");
 var cors = require('cors');
 var corsOptions = {
-    origin: '*'
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 };
 // Create a new express application instance
 var app = express();
@@ -16,7 +19,6 @@ app.get('/', cors(corsOptions), function (req, res) {
     res.type('application/json');
     res.send(residents);
 });
-
 app.listen(port, function () {
     console.log('Example app listening on port 3000!');
 });
